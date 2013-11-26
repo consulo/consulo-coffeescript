@@ -1,18 +1,17 @@
 package org.coffeebrew.highlighter;
 
-import com.intellij.lexer.Lexer;
-import com.intellij.openapi.editor.HighlighterColors;
-import com.intellij.openapi.editor.SyntaxHighlighterColors;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
-import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
-import com.intellij.psi.tree.IElementType;
-import org.coffeebrew.lang.lexer.CoffeeScriptElementType;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.coffeebrew.lang.lexer.CoffeeScriptFlexLexer;
 import org.coffeebrew.lang.lexer.CoffeeScriptTokenTypes;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.HashMap;
-import java.util.Map;
+import com.intellij.lexer.Lexer;
+import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
+import com.intellij.openapi.editor.HighlighterColors;
+import com.intellij.openapi.editor.colors.TextAttributesKey;
+import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
+import com.intellij.psi.tree.IElementType;
 
 /**
  * CoffeeScript syntax highlighter
@@ -31,197 +30,197 @@ public class CoffeeScriptSyntaxHighlighter extends SyntaxHighlighterBase {
 
   static final TextAttributesKey BAD_CHARACTER = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.BAD_CHARACTER",
-          HighlighterColors.BAD_CHARACTER.getDefaultAttributes()
+          HighlighterColors.BAD_CHARACTER
   );
 
   static final TextAttributesKey SEMICOLON = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.SEMICOLON",
-          SyntaxHighlighterColors.JAVA_SEMICOLON.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.SEMICOLON
   );
 
   static final TextAttributesKey COMMA = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.COMMA",
-          SyntaxHighlighterColors.COMMA.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.COMMA
   );
 
   static final TextAttributesKey DOT = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.DOT",
-          SyntaxHighlighterColors.DOT.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.DOT
   );
 
   static final TextAttributesKey CLASS_NAME = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.CLASS_NAME",
-          HighlighterColors.TEXT.getDefaultAttributes()
+          HighlighterColors.TEXT
   );
 
   static final TextAttributesKey IDENTIFIER = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.IDENTIFIER",
-          HighlighterColors.TEXT.getDefaultAttributes()
+          HighlighterColors.TEXT
   );
 
   static final TextAttributesKey CONSTANT = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.CONSTANT",
-          HighlighterColors.TEXT.getDefaultAttributes()
+          HighlighterColors.TEXT
   );
 
   static final TextAttributesKey FUNCTION_NAME = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.FUNCTION_NAME",
-          HighlighterColors.TEXT.getDefaultAttributes()
+		  DefaultLanguageHighlighterColors.FUNCTION_DECLARATION
   );
 
   static final TextAttributesKey OBJECT_KEY = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.OBJECT_KEY",
-          HighlighterColors.TEXT.getDefaultAttributes()
+          HighlighterColors.TEXT
   );
 
   static final TextAttributesKey NUMBER = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.NUMBER",
-          SyntaxHighlighterColors.NUMBER.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.NUMBER
   );
 
   static final TextAttributesKey BOOLEAN = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.BOOLEAN",
-          SyntaxHighlighterColors.NUMBER.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.NUMBER
   );
 
   static final TextAttributesKey STRING_LITERAL = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.STRING_LITERAL",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static final TextAttributesKey STRING = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.STRING",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static final TextAttributesKey HEREDOC_ID = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.HEREDOC_ID",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static final TextAttributesKey HEREDOC_CONTENT = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.HEREDOC_CONTENT",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static final TextAttributesKey HEREGEX_ID = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.HEREGEX_ID",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static final TextAttributesKey HEREGEX_CONTENT = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.HEREGEX_CONTENT",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static final TextAttributesKey JAVASCRIPT_ID = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.JAVASCRIPT_ID",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static final TextAttributesKey JAVASCRIPT_CONTENT = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.JAVASCRIPT_CONTENT",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static final TextAttributesKey EXPRESSIONS_SUBSTITUTION_MARK = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.EXPRESSIONS_SUBSTITUTION_MARK",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static final TextAttributesKey LINE_COMMENT = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.LINE_COMMENT",
-          SyntaxHighlighterColors.LINE_COMMENT.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.LINE_COMMENT
   );
 
   static final TextAttributesKey BLOCK_COMMENT = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.BLOCK_COMMENT",
-          SyntaxHighlighterColors.JAVA_BLOCK_COMMENT.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.BLOCK_COMMENT
   );
 
   static final TextAttributesKey PARENTHESIS = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.PARENTHESIS",
-          SyntaxHighlighterColors.PARENTHS.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.PARENTHESES
   );
 
   static final TextAttributesKey BRACKETS = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.BRACKET",
-          SyntaxHighlighterColors.BRACKETS.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.BRACKETS
   );
 
   static final TextAttributesKey BRACES = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.BRACE",
-          SyntaxHighlighterColors.BRACES.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.BRACES
   );
 
   static final TextAttributesKey OPERATIONS = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.OPERATIONS",
-          SyntaxHighlighterColors.OPERATION_SIGN.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.OPERATION_SIGN
   );
 
   static final TextAttributesKey EXISTENTIAL = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.EXISTENTIAL",
-          SyntaxHighlighterColors.OPERATION_SIGN.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.OPERATION_SIGN
   );
 
   static final TextAttributesKey KEYWORD = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.KEYWORD",
-          SyntaxHighlighterColors.KEYWORD.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.KEYWORD
   );
 
   static final TextAttributesKey RANGE = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.RANGE",
-          SyntaxHighlighterColors.OPERATION_SIGN.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.OPERATION_SIGN
   );
 
   static final TextAttributesKey SPLAT = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.SPLAT",
-          SyntaxHighlighterColors.OPERATION_SIGN.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.OPERATION_SIGN
   );
 
   static final TextAttributesKey THIS = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.THIS",
-          SyntaxHighlighterColors.OPERATION_SIGN.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.OPERATION_SIGN
   );
 
   static final TextAttributesKey COLON = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.COLON",
-          SyntaxHighlighterColors.OPERATION_SIGN.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.OPERATION_SIGN
   );
 
   static final TextAttributesKey PROTOTYPE = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.PROTOTYPE",
-          SyntaxHighlighterColors.OPERATION_SIGN.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.OPERATION_SIGN
   );
 
   static final TextAttributesKey FUNCTION = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.FUNCTION",
-          SyntaxHighlighterColors.OPERATION_SIGN.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.OPERATION_SIGN
   );
 
   static final TextAttributesKey FUNCTION_BINDING = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.FUNCTION_BINDING",
-          SyntaxHighlighterColors.OPERATION_SIGN.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.OPERATION_SIGN
   );
 
   static final TextAttributesKey REGULAR_EXPRESSION_ID = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.REGULAR_EXPRESSION_ID",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static final TextAttributesKey REGULAR_EXPRESSION_CONTENT = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.REGULAR_EXPRESSION_CONTENT",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static final TextAttributesKey REGULAR_EXPRESSION_FLAG = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.REGULAR_EXPRESSION_FLAG",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static final TextAttributesKey ESCAPE_SEQUENCE = TextAttributesKey.createTextAttributesKey(
           "COFFEESCRIPT.ESCAPE_SEQUENCE",
-          SyntaxHighlighterColors.STRING.getDefaultAttributes()
+          DefaultLanguageHighlighterColors.STRING
   );
 
   static {
@@ -334,10 +333,6 @@ public class CoffeeScriptSyntaxHighlighter extends SyntaxHighlighterBase {
 
   @NotNull
   public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
-    if (!TOKENS_TO_STYLES.containsKey(tokenType)) {
-      throw new UnsupportedOperationException(tokenType.toString());
-    }
     return pack(TOKENS_TO_STYLES.get(tokenType));
   }
-
 }

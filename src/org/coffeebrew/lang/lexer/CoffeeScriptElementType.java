@@ -14,7 +14,7 @@ public class CoffeeScriptElementType extends IElementType {
   private String name = null;
 
   public CoffeeScriptElementType(String name) {
-    super(name, CoffeeScriptFileType.COFFEE_SCRIPT_FILE_TYPE.getLanguage());
+    super(name, CoffeeScriptFileType.INSTANCE.getLanguage());
 
     this.name = name;
   }

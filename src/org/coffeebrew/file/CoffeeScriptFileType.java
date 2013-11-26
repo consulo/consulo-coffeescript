@@ -1,13 +1,12 @@
 package org.coffeebrew.file;
 
-import com.intellij.lang.Language;
-import com.intellij.openapi.fileTypes.LanguageFileType;
+import javax.swing.Icon;
+
 import org.coffeebrew.CoffeeScriptIcons;
 import org.coffeebrew.CoffeeScriptLanguage;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
-
-import javax.swing.*;
+import com.intellij.openapi.fileTypes.LanguageFileType;
 
 /**
  * CoffeeScript file properties
@@ -15,39 +14,42 @@ import javax.swing.*;
  * @author Michael kessler
  * @since 0.1.0
  */
-public class CoffeeScriptFileType extends LanguageFileType {
+public class CoffeeScriptFileType extends LanguageFileType
+{
+	public static final CoffeeScriptFileType INSTANCE = new CoffeeScriptFileType();
 
-  public static final CoffeeScriptFileType COFFEE_SCRIPT_FILE_TYPE = new CoffeeScriptFileType();
-  public static final Language COFFEE_SCRIPT_LANGUAGE = COFFEE_SCRIPT_FILE_TYPE.getLanguage();
+	@NonNls
+	public static final String DEFAULT_EXTENSION = "coffee";
 
-  @NonNls
-  public static final String DEFAULT_EXTENSION = "coffee";
+	private CoffeeScriptFileType()
+	{
+		super(CoffeeScriptLanguage.INSTANCE);
+	}
 
-  private CoffeeScriptFileType() {
-    super(new CoffeeScriptLanguage());
-  }
+	@NotNull
+	@NonNls
+	public String getName()
+	{
+		return "CoffeeScript";
+	}
 
-  @NotNull
-  @NonNls
-  public String getName() {
-    return "CoffeeScript";
-  }
+	@NonNls
+	@NotNull
+	public String getDescription()
+	{
+		return "CoffeeScript Files";
+	}
 
-  @NonNls
-  @NotNull
-  public String getDescription() {
-    return "CoffeeScript Files";
-  }
+	@NotNull
+	@NonNls
+	public String getDefaultExtension()
+	{
+		return DEFAULT_EXTENSION;
+	}
 
-  @NotNull
-  @NonNls
-  public String getDefaultExtension() {
-    return DEFAULT_EXTENSION;
-  }
-
-  @NotNull
-   public Icon getIcon() {
-    return CoffeeScriptIcons.FILE_TYPE;
-  }
-
+	@NotNull
+	public Icon getIcon()
+	{
+		return CoffeeScriptIcons.FILE_TYPE;
+	}
 }

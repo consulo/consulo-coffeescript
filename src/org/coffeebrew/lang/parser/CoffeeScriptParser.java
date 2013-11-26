@@ -1,12 +1,11 @@
 package org.coffeebrew.lang.parser;
 
+import org.jetbrains.annotations.NotNull;
 import com.intellij.lang.ASTNode;
+import com.intellij.lang.LanguageVersion;
 import com.intellij.lang.PsiBuilder;
 import com.intellij.lang.PsiParser;
-import com.intellij.psi.PlainTextTokenTypes;
-import com.intellij.psi.impl.source.tree.PlainTextASTFactory;
 import com.intellij.psi.tree.IElementType;
-import org.jetbrains.annotations.NotNull;
 
 /**
  * Parser implementation for CoffeeScript language support
@@ -17,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 public class CoffeeScriptParser implements PsiParser {
 
   @NotNull
-  public ASTNode parse(IElementType root, PsiBuilder builder) {
+  public ASTNode parse(IElementType root, PsiBuilder builder, LanguageVersion languageVersion) {
     final PsiBuilder.Marker rootMarker = builder.mark();
 
     while (!builder.eof()) {

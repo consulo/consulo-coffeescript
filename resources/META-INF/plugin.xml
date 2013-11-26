@@ -1,0 +1,22 @@
+<idea-plugin>
+	<id>org.mustbe.consulo.coffeescript</id>
+	<name>CoffeeScript</name>
+	<description>Plugin for CoffeeScript language support</description>
+	<version>1.0</version>
+	<vendor>Michael Kessler</vendor>
+
+	<extensions defaultExtensionNs="com.intellij">
+		<lang.syntaxHighlighterFactory key="CoffeeScript"
+									   implementationClass="org.coffeebrew.highlighter.CoffeeScriptHighlighterFactory"/>
+		<lang.parserDefinition language="CoffeeScript"
+							   implementationClass="org.coffeebrew.lang.parser.CoffeeScriptParserDefinition"/>
+		<lang.commenter language="CoffeeScript"
+						implementationClass="org.coffeebrew.highlighter.CoffeeScriptCommenter"/>
+		<colorSettingsPage implementation="org.coffeebrew.highlighter.CoffeeScriptColorSettingsPage"/>
+		<lang.braceMatcher language="CoffeeScript"
+						   implementationClass="org.coffeebrew.highlighter.CoffeeScriptBraceMatcher"/>
+		<lang.fileViewProviderFactory language="CoffeeScript"
+									  implementationClass="org.coffeebrew.file.CoffeeScriptFileViewProviderFactory"/>
+		<fileTypeFactory implementation="org.coffeebrew.file.CoffeeScriptFileTypeFactory"/>
+	</extensions>
+</idea-plugin>

@@ -8,18 +8,18 @@ import com.intellij.psi.tree.TokenSet;
  * @author Michael Kessler
  * @since 0.1.0
  */
-public abstract class CoffeeScriptTokenSets implements CoffeeScriptTokenTypes {
+public interface CoffeeScriptTokenSets extends CoffeeScriptTokenTypes {
 
-  public static TokenSet WHITESPACE_TOKEN_SET = TokenSet.create(
+  TokenSet WHITESPACE_TOKEN_SET = TokenSet.create(
           WHITE_SPACE
   );
 
-  public static TokenSet COMMENTS_TOKEN_SET = TokenSet.create(
+  TokenSet COMMENTS_TOKEN_SET = TokenSet.create(
           LINE_COMMENT,
           BLOCK_COMMENT
   );
 
-  public static TokenSet STRING_TOKEN_SET = TokenSet.create(
+  TokenSet STRING_TOKEN_SET = TokenSet.create(
           STRING,
           STRING_LITERAL
   );

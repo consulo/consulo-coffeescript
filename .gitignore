@@ -1,6 +1,2 @@
-.DS_Store
-target
-out
-src/org/coffeebrew/lang/lexer/CoffeeScriptLexer.java
-coffee-brew.iws
-build.properties
+/out
+/.consulo/workspace.xml
