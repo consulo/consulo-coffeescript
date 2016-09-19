@@ -1,1 +1,1 @@
-![Build Status](http://must-be.org:8080/vulcan_web/statusImage?name=consulo-coffeescript)
+[![Build Status](http://must-be.org/jenkins/job/consulo-coffescript/badge/icon)](http://must-be.org/jenkins/job/consulo-coffescript/)

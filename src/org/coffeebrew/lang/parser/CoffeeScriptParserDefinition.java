@@ -1,22 +1,21 @@
 package org.coffeebrew.lang.parser;
 
+import com.intellij.lang.ASTNode;
+import com.intellij.lang.ParserDefinition;
+import com.intellij.lang.PsiParser;
+import com.intellij.lexer.Lexer;
+import com.intellij.psi.FileViewProvider;
+import com.intellij.psi.PsiElement;
+import com.intellij.psi.PsiFile;
+import com.intellij.psi.tree.IFileElementType;
+import com.intellij.psi.tree.TokenSet;
+import consulo.lang.LanguageVersion;
 import org.coffeebrew.CoffeeScriptLanguage;
 import org.coffeebrew.lang.lexer.CoffeeScriptFlexLexer;
 import org.coffeebrew.lang.lexer.CoffeeScriptTokenSets;
 import org.coffeebrew.lang.psi.CoffeeScriptFile;
 import org.coffeebrew.lang.psi.impl.CoffeeScriptElementImpl;
 import org.jetbrains.annotations.NotNull;
-import com.intellij.lang.ASTNode;
-import com.intellij.lang.LanguageVersion;
-import com.intellij.lang.ParserDefinition;
-import com.intellij.lang.PsiParser;
-import com.intellij.lexer.Lexer;
-import com.intellij.openapi.project.Project;
-import com.intellij.psi.FileViewProvider;
-import com.intellij.psi.PsiElement;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.tree.IFileElementType;
-import com.intellij.psi.tree.TokenSet;
 
 public class CoffeeScriptParserDefinition implements ParserDefinition {
 
@@ -24,13 +23,13 @@ public class CoffeeScriptParserDefinition implements ParserDefinition {
 
   @Override
   @NotNull
-  public Lexer createLexer(Project project, @NotNull LanguageVersion languageVersion) {
+  public Lexer createLexer(@NotNull LanguageVersion languageVersion) {
     return new CoffeeScriptFlexLexer();
   }
 
   @NotNull
   @Override
-  public PsiParser createParser(Project project, @NotNull LanguageVersion languageVersion) {
+  public PsiParser createParser(@NotNull LanguageVersion languageVersion) {
     return new CoffeeScriptParser();
   }
 

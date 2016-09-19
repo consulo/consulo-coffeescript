@@ -1,8 +1,8 @@
 <idea-plugin>
-	<id>org.mustbe.consulo.coffeescript</id>
+	<id>consulo.coffeescript</id>
 	<name>CoffeeScript</name>
 	<description>Plugin for CoffeeScript language support</description>
-	<version>1.0</version>
+	<version>SNAPSHOT</version>
 	<vendor>Michael Kessler</vendor>
 
 	<extensions defaultExtensionNs="com.intellij">
