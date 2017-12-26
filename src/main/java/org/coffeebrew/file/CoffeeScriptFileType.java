@@ -28,7 +28,7 @@ public class CoffeeScriptFileType extends LanguageFileType
 
 	@NotNull
 	@NonNls
-	public String getName()
+	public String getId()
 	{
 		return "CoffeeScript";
 	}
