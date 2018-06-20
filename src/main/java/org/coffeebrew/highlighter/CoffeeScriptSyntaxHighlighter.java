@@ -3,9 +3,10 @@ package org.coffeebrew.highlighter;
 import java.util.HashMap;
 import java.util.Map;
 
+import javax.annotation.Nonnull;
+
 import org.coffeebrew.lang.lexer.CoffeeScriptFlexLexer;
 import org.coffeebrew.lang.lexer.CoffeeScriptTokenTypes;
-import org.jetbrains.annotations.NotNull;
 import com.intellij.lexer.Lexer;
 import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
 import com.intellij.openapi.editor.HighlighterColors;
@@ -23,7 +24,7 @@ public class CoffeeScriptSyntaxHighlighter extends SyntaxHighlighterBase {
 
   private static final Map<IElementType, TextAttributesKey> TOKENS_TO_STYLES;
 
-  @NotNull
+  @Nonnull
   public Lexer getHighlightingLexer() {
     return new CoffeeScriptFlexLexer();
   }
@@ -331,7 +332,7 @@ public class CoffeeScriptSyntaxHighlighter extends SyntaxHighlighterBase {
     TOKENS_TO_STYLES.put(CoffeeScriptTokenTypes.INSTANCE_OF, KEYWORD);
   }
 
-  @NotNull
+  @Nonnull
   public TextAttributesKey[] getTokenHighlights(IElementType tokenType) {
     return pack(TOKENS_TO_STYLES.get(tokenType));
   }

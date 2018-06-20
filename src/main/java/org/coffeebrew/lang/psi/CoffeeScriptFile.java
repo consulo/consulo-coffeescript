@@ -2,7 +2,7 @@ package org.coffeebrew.lang.psi;
 
 import static org.coffeebrew.file.CoffeeScriptFileType.INSTANCE;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 import com.intellij.extapi.psi.PsiFileBase;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.psi.FileViewProvider;
@@ -19,7 +19,7 @@ public class CoffeeScriptFile extends PsiFileBase {
     super(viewProvider, INSTANCE.getLanguage());
   }
 
-  @NotNull
+  @Nonnull
   public FileType getFileType() {
     return INSTANCE;
   }

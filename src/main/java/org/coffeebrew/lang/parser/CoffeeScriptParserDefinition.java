@@ -1,5 +1,7 @@
 package org.coffeebrew.lang.parser;
 
+import javax.annotation.Nonnull;
+
 import com.intellij.lang.ASTNode;
 import com.intellij.lang.ParserDefinition;
 import com.intellij.lang.PsiParser;
@@ -15,50 +17,49 @@ import org.coffeebrew.lang.lexer.CoffeeScriptFlexLexer;
 import org.coffeebrew.lang.lexer.CoffeeScriptTokenSets;
 import org.coffeebrew.lang.psi.CoffeeScriptFile;
 import org.coffeebrew.lang.psi.impl.CoffeeScriptElementImpl;
-import org.jetbrains.annotations.NotNull;
 
 public class CoffeeScriptParserDefinition implements ParserDefinition {
 
   private static final IFileElementType FILE_ELEMENT_TYPE = new IFileElementType(CoffeeScriptLanguage.INSTANCE);
 
   @Override
-  @NotNull
-  public Lexer createLexer(@NotNull LanguageVersion languageVersion) {
+  @Nonnull
+  public Lexer createLexer(@Nonnull LanguageVersion languageVersion) {
     return new CoffeeScriptFlexLexer();
   }
 
-  @NotNull
+  @Nonnull
   @Override
-  public PsiParser createParser(@NotNull LanguageVersion languageVersion) {
+  public PsiParser createParser(@Nonnull LanguageVersion languageVersion) {
     return new CoffeeScriptParser();
   }
 
-  @NotNull
+  @Nonnull
   @Override
   public IFileElementType getFileNodeType() {
     return FILE_ELEMENT_TYPE;
   }
 
   @Override
-  @NotNull
-  public TokenSet getWhitespaceTokens(@NotNull LanguageVersion languageVersion) {
+  @Nonnull
+  public TokenSet getWhitespaceTokens(@Nonnull LanguageVersion languageVersion) {
     return CoffeeScriptTokenSets.WHITESPACE_TOKEN_SET;
   }
 
   @Override
-  @NotNull
-  public TokenSet getCommentTokens(@NotNull LanguageVersion languageVersion) {
+  @Nonnull
+  public TokenSet getCommentTokens(@Nonnull LanguageVersion languageVersion) {
     return CoffeeScriptTokenSets.COMMENTS_TOKEN_SET;
   }
 
   @Override
-  @NotNull
-  public TokenSet getStringLiteralElements(@NotNull LanguageVersion languageVersion) {
+  @Nonnull
+  public TokenSet getStringLiteralElements(@Nonnull LanguageVersion languageVersion) {
     return CoffeeScriptTokenSets.STRING_TOKEN_SET;
   }
 
   @Override
-  @NotNull
+  @Nonnull
   public PsiElement createElement(ASTNode node) {
     return new CoffeeScriptElementImpl(node);
   }

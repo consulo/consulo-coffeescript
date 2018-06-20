@@ -1,11 +1,9 @@
 package org.coffeebrew.file;
 
-import javax.swing.Icon;
-
 import org.coffeebrew.CoffeeScriptIcons;
 import org.coffeebrew.CoffeeScriptLanguage;
 import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import consulo.ui.image.Image;
 
@@ -27,7 +25,7 @@ public class CoffeeScriptFileType extends LanguageFileType
 		super(CoffeeScriptLanguage.INSTANCE);
 	}
 
-	@NotNull
+	@Nonnull
 	@NonNls
 	public String getId()
 	{
@@ -35,20 +33,20 @@ public class CoffeeScriptFileType extends LanguageFileType
 	}
 
 	@NonNls
-	@NotNull
+	@Nonnull
 	public String getDescription()
 	{
 		return "CoffeeScript Files";
 	}
 
-	@NotNull
+	@Nonnull
 	@NonNls
 	public String getDefaultExtension()
 	{
 		return DEFAULT_EXTENSION;
 	}
 
-	@NotNull
+	@Nonnull
 	public Image getIcon()
 	{
 		return CoffeeScriptIcons.FILE_TYPE;

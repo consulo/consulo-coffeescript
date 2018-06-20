@@ -5,8 +5,8 @@ import com.intellij.lang.PairedBraceMatcher;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.tree.IElementType;
 import org.coffeebrew.lang.lexer.CoffeeScriptTokenTypes;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
+import javax.annotation.Nonnull;
+import javax.annotation.Nullable;
 
 /**
  * Brace matcher for the CoffeeScript language
@@ -31,7 +31,7 @@ public class CoffeeScriptBraceMatcher implements PairedBraceMatcher {
     return PAIRS;
   }
 
-  public boolean isPairedBracesAllowedBeforeType(@NotNull IElementType ibraceType, @Nullable IElementType tokenType) {
+  public boolean isPairedBracesAllowedBeforeType(@Nonnull IElementType ibraceType, @Nullable IElementType tokenType) {
     return true;
   }
 

@@ -1,7 +1,7 @@
 package org.coffeebrew.highlighter;
 
 import com.intellij.openapi.fileTypes.SingleLazyInstanceSyntaxHighlighterFactory;
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
 
 /**
  * CoffeeScript Syntax highlighter factory
@@ -11,7 +11,7 @@ import org.jetbrains.annotations.NotNull;
  */
 public class CoffeeScriptHighlighterFactory extends SingleLazyInstanceSyntaxHighlighterFactory {
 
-  @NotNull
+  @Nonnull
   protected CoffeeScriptSyntaxHighlighter createHighlighter() {
     return new CoffeeScriptSyntaxHighlighter();
   }

@@ -1,6 +1,7 @@
 package org.coffeebrew.file;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+
 import com.intellij.lang.Language;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.PsiManager;
@@ -14,20 +15,20 @@ import com.intellij.psi.SingleRootFileViewProvider;
  */
 public class CoffeeScriptViewProvider extends SingleRootFileViewProvider {
 
-  public CoffeeScriptViewProvider(@NotNull PsiManager manager, @NotNull VirtualFile file) {
+  public CoffeeScriptViewProvider(@Nonnull PsiManager manager, @Nonnull VirtualFile file) {
    super(manager, file);
   }
 
-  public CoffeeScriptViewProvider(@NotNull PsiManager manager, @NotNull VirtualFile virtualFile, final boolean physical) {
+  public CoffeeScriptViewProvider(@Nonnull PsiManager manager, @Nonnull VirtualFile virtualFile, final boolean physical) {
     super(manager, virtualFile, physical);
   }
 
-  protected CoffeeScriptViewProvider(@NotNull PsiManager manager, @NotNull VirtualFile virtualFile, final boolean physical, @NotNull Language language) {
+  protected CoffeeScriptViewProvider(@Nonnull PsiManager manager, @Nonnull VirtualFile virtualFile, final boolean physical, @Nonnull Language language) {
     super(manager, virtualFile, physical, language);
   }
 
   @Override
-  public boolean supportsIncrementalReparse(@NotNull final Language rootLanguage) {
+  public boolean supportsIncrementalReparse(@Nonnull final Language rootLanguage) {
     return false;
   }
 

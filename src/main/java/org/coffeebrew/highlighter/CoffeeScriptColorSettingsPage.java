@@ -2,7 +2,8 @@ package org.coffeebrew.highlighter;
 
 import java.util.Map;
 
-import org.jetbrains.annotations.NotNull;
+import javax.annotation.Nonnull;
+
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.options.colors.AttributesDescriptor;
 import com.intellij.openapi.options.colors.ColorDescriptor;
@@ -58,27 +59,27 @@ public class CoffeeScriptColorSettingsPage implements ColorSettingsPage {
           new AttributesDescriptor("Javascript content", CoffeeScriptSyntaxHighlighter.JAVASCRIPT_CONTENT),
   };
 
-  @NotNull
+  @Nonnull
   public String getDisplayName() {
     return "CoffeeScript";
   }
 
-  @NotNull
+  @Nonnull
   public AttributesDescriptor[] getAttributeDescriptors() {
     return ATTRS;
   }
 
-  @NotNull
+  @Nonnull
   public ColorDescriptor[] getColorDescriptors() {
     return ColorDescriptor.EMPTY_ARRAY;
   }
 
-  @NotNull
+  @Nonnull
   public CoffeeScriptSyntaxHighlighter getHighlighter() {
     return new CoffeeScriptSyntaxHighlighter();
   }
 
-  @NotNull
+  @Nonnull
   public String getDemoText() {
     return "###\n" +
             "Some tests\n" +
