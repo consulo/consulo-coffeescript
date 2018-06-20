@@ -1,14 +1,12 @@
 package org.coffeebrew.highlighter;
 
+import java.util.Map;
+
+import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.options.colors.AttributesDescriptor;
 import com.intellij.openapi.options.colors.ColorDescriptor;
 import com.intellij.openapi.options.colors.ColorSettingsPage;
-import org.coffeebrew.CoffeeScriptIcons;
-import org.jetbrains.annotations.NotNull;
-
-import javax.swing.*;
-import java.util.Map;
 
 /**
  * CoffeeScript color settings page
@@ -63,10 +61,6 @@ public class CoffeeScriptColorSettingsPage implements ColorSettingsPage {
   @NotNull
   public String getDisplayName() {
     return "CoffeeScript";
-  }
-
-  public Icon getIcon() {
-    return CoffeeScriptIcons.FILE_TYPE;
   }
 
   @NotNull

@@ -1,7 +1,7 @@
 package org.coffeebrew.lang.lexer;
 
 
-import com.intellij.lexer.FlexLexer;
+import com.intellij.lexer.LexerBase;
 import com.intellij.psi.tree.IElementType;
 import org.coffeebrew.lang.lexer.CoffeeScriptTokenTypes;
 import java.util.Stack;
@@ -20,10 +20,10 @@ import java.util.Stack;
 
 %public
 %class CoffeeScriptLexer
-%implements FlexLexer
+%extends LexerBase
 %type IElementType
 
-%function advance
+%function advanceImpl
 
 %{
 

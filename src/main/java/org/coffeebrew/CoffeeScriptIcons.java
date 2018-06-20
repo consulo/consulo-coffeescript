@@ -1,8 +1,7 @@
 package org.coffeebrew;
 
-import javax.swing.Icon;
-
 import com.intellij.openapi.util.IconLoader;
+import consulo.ui.image.Image;
 
 /**
  * Icons for the CoffeeScript language
@@ -11,5 +10,5 @@ import com.intellij.openapi.util.IconLoader;
  * @since 0.1.0
  */
 public interface CoffeeScriptIcons {
-  Icon FILE_TYPE = IconLoader.getIcon("/org/coffeebrew/images/coffee-script.png");
+  Image FILE_TYPE = IconLoader.getIcon("/org/coffeebrew/images/coffee-script.png");
 }

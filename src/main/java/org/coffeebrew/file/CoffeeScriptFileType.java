@@ -7,6 +7,7 @@ import org.coffeebrew.CoffeeScriptLanguage;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.fileTypes.LanguageFileType;
+import consulo.ui.image.Image;
 
 /**
  * CoffeeScript file properties
@@ -48,7 +49,7 @@ public class CoffeeScriptFileType extends LanguageFileType
 	}
 
 	@NotNull
-	public Icon getIcon()
+	public Image getIcon()
 	{
 		return CoffeeScriptIcons.FILE_TYPE;
 	}

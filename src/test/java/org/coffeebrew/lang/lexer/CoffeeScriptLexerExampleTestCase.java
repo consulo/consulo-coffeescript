@@ -1,6 +1,6 @@
 package org.coffeebrew.lang.lexer;
 
-import com.intellij.lexer.FlexAdapter;
+import com.intellij.lexer.Lexer;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -82,7 +82,7 @@ class CoffeeScriptLexerExampleTestCase {
    */
   private static Collection<CoffeeScriptLexerTestToken> getExpectedTokens(String example) throws IOException {
 
-    final FlexAdapter lexer = new CoffeeScriptFlexLexer();
+    final Lexer lexer = new CoffeeScriptFlexLexer();
     lexer.start(readFile(example, FileType.COFFEE));
 
     ArrayList<CoffeeScriptLexerTestToken> tokens = new ArrayList<CoffeeScriptLexerTestToken>();
