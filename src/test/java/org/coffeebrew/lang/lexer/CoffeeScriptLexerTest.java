@@ -8,7 +8,7 @@ import org.junit.Test;
  * @author Michael Kessler
  * @since 0.1.0
  */
-public class CoffeeScriptLexerTest extends CoffeeScriptLexerExampleTestCase {
+public abstract class CoffeeScriptLexerTest extends CoffeeScriptLexerExampleTestCase {
 
   @Test
   public void terminators() {
