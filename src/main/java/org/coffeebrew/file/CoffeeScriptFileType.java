@@ -1,11 +1,12 @@
 package org.coffeebrew.file;
 
-import org.coffeebrew.CoffeeScriptIcons;
+import com.intellij.openapi.fileTypes.LanguageFileType;
+import consulo.coffeescript.icon.CoffeeScriptIconGroup;
+import consulo.ui.image.Image;
 import org.coffeebrew.CoffeeScriptLanguage;
 import org.jetbrains.annotations.NonNls;
+
 import javax.annotation.Nonnull;
-import com.intellij.openapi.fileTypes.LanguageFileType;
-import consulo.ui.image.Image;
 
 /**
  * CoffeeScript file properties
@@ -49,6 +50,6 @@ public class CoffeeScriptFileType extends LanguageFileType
 	@Nonnull
 	public Image getIcon()
 	{
-		return CoffeeScriptIcons.FILE_TYPE;
+		return CoffeeScriptIconGroup.coffee_script();
 	}
 }

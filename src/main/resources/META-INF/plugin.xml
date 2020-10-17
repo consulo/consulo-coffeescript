@@ -1,4 +1,4 @@
-<idea-plugin>
+<consulo-plugin>
 	<id>consulo.coffeescript</id>
 	<name>CoffeeScript</name>
 	<description>Plugin for CoffeeScript language support</description>
@@ -19,4 +19,4 @@
 									  implementationClass="org.coffeebrew.file.CoffeeScriptFileViewProviderFactory"/>
 		<fileTypeFactory implementation="org.coffeebrew.file.CoffeeScriptFileTypeFactory"/>
 	</extensions>
-</idea-plugin>
+</consulo-plugin>
