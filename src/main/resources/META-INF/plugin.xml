@@ -4,6 +4,10 @@
 	<description>Plugin for CoffeeScript language support</description>
 	<version>SNAPSHOT</version>
 	<vendor>Michael Kessler</vendor>
+	<category>Custom Languages</category>
+	<tags>
+		<tag>custom.language</tag>
+	</tags>
 
 	<extensions defaultExtensionNs="com.intellij">
 		<lang.syntaxHighlighterFactory key="CoffeeScript"
