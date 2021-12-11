@@ -2,6 +2,7 @@ package org.coffeebrew.file;
 
 import com.intellij.openapi.fileTypes.LanguageFileType;
 import consulo.coffeescript.icon.CoffeeScriptIconGroup;
+import consulo.localize.LocalizeValue;
 import consulo.ui.image.Image;
 import org.coffeebrew.CoffeeScriptLanguage;
 import org.jetbrains.annotations.NonNls;
@@ -35,9 +36,9 @@ public class CoffeeScriptFileType extends LanguageFileType
 
 	@NonNls
 	@Nonnull
-	public String getDescription()
+	public LocalizeValue getDescription()
 	{
-		return "CoffeeScript Files";
+		return LocalizeValue.localizeTODO("CoffeeScript Files");
 	}
 
 	@Nonnull
