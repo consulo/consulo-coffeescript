@@ -1,12 +1,13 @@
 package org.coffeebrew.highlighter;
 
-import com.intellij.lang.BracePair;
-import com.intellij.lang.PairedBraceMatcher;
-import com.intellij.psi.PsiFile;
-import com.intellij.psi.tree.IElementType;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.language.BracePair;
+import consulo.language.Language;
+import consulo.language.PairedBraceMatcher;
+import org.coffeebrew.CoffeeScriptLanguage;
 import org.coffeebrew.lang.lexer.CoffeeScriptTokenTypes;
+
 import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
 
 /**
  * Brace matcher for the CoffeeScript language
@@ -14,6 +15,7 @@ import javax.annotation.Nullable;
  * @author Michael Kessler
  * @since 0.1.0
  */
+@ExtensionImpl
 public class CoffeeScriptBraceMatcher implements PairedBraceMatcher {
 
   private static final BracePair[] PAIRS = {
@@ -31,12 +33,9 @@ public class CoffeeScriptBraceMatcher implements PairedBraceMatcher {
     return PAIRS;
   }
 
-  public boolean isPairedBracesAllowedBeforeType(@Nonnull IElementType ibraceType, @Nullable IElementType tokenType) {
-    return true;
+  @Nonnull
+  @Override
+  public Language getLanguage() {
+    return CoffeeScriptLanguage.INSTANCE;
   }
-
-  public int getCodeConstructStart(PsiFile file, int openingBraceOffset) {
-    return openingBraceOffset;
-  }
-
 }

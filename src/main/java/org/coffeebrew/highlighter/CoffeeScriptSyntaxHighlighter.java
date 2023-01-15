@@ -1,18 +1,17 @@
 package org.coffeebrew.highlighter;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import javax.annotation.Nonnull;
-
+import consulo.codeEditor.DefaultLanguageHighlighterColors;
+import consulo.codeEditor.HighlighterColors;
+import consulo.colorScheme.TextAttributesKey;
+import consulo.language.ast.IElementType;
+import consulo.language.editor.highlight.SyntaxHighlighterBase;
+import consulo.language.lexer.Lexer;
 import org.coffeebrew.lang.lexer.CoffeeScriptFlexLexer;
 import org.coffeebrew.lang.lexer.CoffeeScriptTokenTypes;
-import com.intellij.lexer.Lexer;
-import com.intellij.openapi.editor.DefaultLanguageHighlighterColors;
-import com.intellij.openapi.editor.HighlighterColors;
-import com.intellij.openapi.editor.colors.TextAttributesKey;
-import com.intellij.openapi.fileTypes.SyntaxHighlighterBase;
-import com.intellij.psi.tree.IElementType;
+
+import javax.annotation.Nonnull;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * CoffeeScript syntax highlighter
@@ -30,13 +29,13 @@ public class CoffeeScriptSyntaxHighlighter extends SyntaxHighlighterBase {
   }
 
   static final TextAttributesKey BAD_CHARACTER = TextAttributesKey.createTextAttributesKey(
-          "COFFEESCRIPT.BAD_CHARACTER",
-          HighlighterColors.BAD_CHARACTER
+    "COFFEESCRIPT.BAD_CHARACTER",
+    HighlighterColors.BAD_CHARACTER
   );
 
   static final TextAttributesKey SEMICOLON = TextAttributesKey.createTextAttributesKey(
-          "COFFEESCRIPT.SEMICOLON",
-          DefaultLanguageHighlighterColors.SEMICOLON
+    "COFFEESCRIPT.SEMICOLON",
+    DefaultLanguageHighlighterColors.SEMICOLON
   );
 
   static final TextAttributesKey COMMA = TextAttributesKey.createTextAttributesKey(

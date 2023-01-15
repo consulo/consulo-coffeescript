@@ -1,9 +1,14 @@
 package org.coffeebrew.highlighter;
 
-import com.intellij.lang.CodeDocumentationAwareCommenter;
-import com.intellij.psi.PsiComment;
-import com.intellij.psi.tree.IElementType;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.language.CodeDocumentationAwareCommenter;
+import consulo.language.Language;
+import consulo.language.ast.IElementType;
+import consulo.language.psi.PsiComment;
+import org.coffeebrew.CoffeeScriptLanguage;
 import org.coffeebrew.lang.lexer.CoffeeScriptTokenTypes;
+
+import javax.annotation.Nonnull;
 import javax.annotation.Nullable;
 
 /**
@@ -12,6 +17,7 @@ import javax.annotation.Nullable;
  * @author Michael Kessler
  * @since 0.1.0
  */
+@ExtensionImpl
 public class CoffeeScriptCommenter implements CodeDocumentationAwareCommenter {
 
   public String getLineCommentPrefix() {
@@ -68,4 +74,9 @@ public class CoffeeScriptCommenter implements CodeDocumentationAwareCommenter {
     return false;
   }
 
+  @Nonnull
+  @Override
+  public Language getLanguage() {
+    return CoffeeScriptLanguage.INSTANCE;
+  }
 }

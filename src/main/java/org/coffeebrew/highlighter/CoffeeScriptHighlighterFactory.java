@@ -1,6 +1,10 @@
 package org.coffeebrew.highlighter;
 
-import com.intellij.openapi.fileTypes.SingleLazyInstanceSyntaxHighlighterFactory;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.language.Language;
+import consulo.language.editor.highlight.SingleLazyInstanceSyntaxHighlighterFactory;
+import org.coffeebrew.CoffeeScriptLanguage;
+
 import javax.annotation.Nonnull;
 
 /**
@@ -9,6 +13,7 @@ import javax.annotation.Nonnull;
  * @author Michael Kessler
  * @since 0.1.0
  */
+@ExtensionImpl
 public class CoffeeScriptHighlighterFactory extends SingleLazyInstanceSyntaxHighlighterFactory {
 
   @Nonnull
@@ -16,4 +21,9 @@ public class CoffeeScriptHighlighterFactory extends SingleLazyInstanceSyntaxHigh
     return new CoffeeScriptSyntaxHighlighter();
   }
 
+  @Nonnull
+  @Override
+  public Language getLanguage() {
+    return CoffeeScriptLanguage.INSTANCE;
+  }
 }

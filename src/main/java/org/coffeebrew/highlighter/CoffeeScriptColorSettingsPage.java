@@ -1,13 +1,12 @@
 package org.coffeebrew.highlighter;
 
-import java.util.Map;
+import consulo.annotation.component.ExtensionImpl;
+import consulo.colorScheme.TextAttributesKey;
+import consulo.colorScheme.setting.AttributesDescriptor;
+import consulo.language.editor.colorScheme.setting.ColorSettingsPage;
 
 import javax.annotation.Nonnull;
-
-import com.intellij.openapi.editor.colors.TextAttributesKey;
-import com.intellij.openapi.options.colors.AttributesDescriptor;
-import com.intellij.openapi.options.colors.ColorDescriptor;
-import com.intellij.openapi.options.colors.ColorSettingsPage;
+import java.util.Map;
 
 /**
  * CoffeeScript color settings page
@@ -15,6 +14,7 @@ import com.intellij.openapi.options.colors.ColorSettingsPage;
  * @author Michael Kessler
  * @since 0.1.0
  */
+@ExtensionImpl
 public class CoffeeScriptColorSettingsPage implements ColorSettingsPage {
 
   private static final AttributesDescriptor[] ATTRS = new AttributesDescriptor[]{
@@ -67,11 +67,6 @@ public class CoffeeScriptColorSettingsPage implements ColorSettingsPage {
   @Nonnull
   public AttributesDescriptor[] getAttributeDescriptors() {
     return ATTRS;
-  }
-
-  @Nonnull
-  public ColorDescriptor[] getColorDescriptors() {
-    return ColorDescriptor.EMPTY_ARRAY;
   }
 
   @Nonnull

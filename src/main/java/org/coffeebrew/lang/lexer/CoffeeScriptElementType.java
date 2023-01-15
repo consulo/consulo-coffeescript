@@ -1,6 +1,6 @@
 package org.coffeebrew.lang.lexer;
 
-import com.intellij.psi.tree.IElementType;
+import consulo.language.ast.IElementType;
 import org.coffeebrew.file.CoffeeScriptFileType;
 
 /**

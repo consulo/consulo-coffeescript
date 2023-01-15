@@ -1,6 +1,6 @@
 package org.coffeebrew.lang.psi;
 
-import com.intellij.psi.PsiElement;
+import consulo.language.psi.PsiElement;
 
 /**
  * @author Michael Kessler

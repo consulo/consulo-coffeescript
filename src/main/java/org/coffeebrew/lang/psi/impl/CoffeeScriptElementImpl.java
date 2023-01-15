@@ -1,7 +1,7 @@
 package org.coffeebrew.lang.psi.impl;
 
-import com.intellij.extapi.psi.ASTWrapperPsiElement;
-import com.intellij.lang.ASTNode;
+import consulo.language.ast.ASTNode;
+import consulo.language.impl.psi.ASTWrapperPsiElement;
 import org.coffeebrew.lang.psi.CoffeeScriptElement;
 
 /**
@@ -16,9 +16,4 @@ public class CoffeeScriptElementImpl extends ASTWrapperPsiElement implements Cof
     super(node);
     this.node = node;
   }
-
-  public String toString() {
-    return "CS:" + node.getElementType().toString();
-  }
-
 }

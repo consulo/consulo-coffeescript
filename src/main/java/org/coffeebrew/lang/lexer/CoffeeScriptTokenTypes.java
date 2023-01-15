@@ -1,7 +1,7 @@
 package org.coffeebrew.lang.lexer;
 
-import com.intellij.psi.TokenType;
-import com.intellij.psi.tree.IElementType;
+import consulo.language.ast.IElementType;
+import consulo.language.ast.TokenType;
 
 /**
  * Define the CoffeeScript tokens used within the CoffeeScriptLexer

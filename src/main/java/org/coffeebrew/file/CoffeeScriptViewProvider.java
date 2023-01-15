@@ -1,11 +1,12 @@
 package org.coffeebrew.file;
 
+import consulo.language.Language;
+import consulo.language.impl.file.SingleRootFileViewProvider;
+import consulo.language.psi.PsiManager;
+import consulo.virtualFileSystem.VirtualFile;
+
 import javax.annotation.Nonnull;
 
-import com.intellij.lang.Language;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.PsiManager;
-import com.intellij.psi.SingleRootFileViewProvider;
 
 /**
  * CoffeeScript view provider that disables incremental reparsing
@@ -31,5 +32,4 @@ public class CoffeeScriptViewProvider extends SingleRootFileViewProvider {
   public boolean supportsIncrementalReparse(@Nonnull final Language rootLanguage) {
     return false;
   }
-
 }

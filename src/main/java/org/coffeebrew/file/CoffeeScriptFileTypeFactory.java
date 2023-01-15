@@ -1,15 +1,15 @@
 package org.coffeebrew.file;
 
+import consulo.annotation.component.ExtensionImpl;
+import consulo.virtualFileSystem.fileType.FileTypeConsumer;
+import consulo.virtualFileSystem.fileType.FileTypeFactory;
+
 import javax.annotation.Nonnull;
 
-import com.intellij.openapi.fileTypes.FileTypeConsumer;
-import com.intellij.openapi.fileTypes.FileTypeFactory;
-
-public class CoffeeScriptFileTypeFactory extends FileTypeFactory
-{
-	@Override
-	public void createFileTypes(@Nonnull FileTypeConsumer fileTypeConsumer)
-	{
-		fileTypeConsumer.consume(CoffeeScriptFileType.INSTANCE);
-	}
+@ExtensionImpl
+public class CoffeeScriptFileTypeFactory extends FileTypeFactory {
+  @Override
+  public void createFileTypes(@Nonnull FileTypeConsumer fileTypeConsumer) {
+    fileTypeConsumer.consume(CoffeeScriptFileType.INSTANCE);
+  }
 }

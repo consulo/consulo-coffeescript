@@ -1,6 +1,6 @@
 package org.coffeebrew;
 
-import com.intellij.lang.Language;
+import consulo.language.Language;
 
 /**
  * All main properties for the CoffeeScript language
@@ -8,18 +8,15 @@ import com.intellij.lang.Language;
  * @author Michael Kessler
  * @since 0.1.0
  */
-public class CoffeeScriptLanguage extends Language
-{
-	public static CoffeeScriptLanguage INSTANCE = new CoffeeScriptLanguage();
+public class CoffeeScriptLanguage extends Language {
+  public static CoffeeScriptLanguage INSTANCE = new CoffeeScriptLanguage();
 
-	public CoffeeScriptLanguage()
-	{
-		super("CoffeeScript", "text/coffeescript");
-	}
+  public CoffeeScriptLanguage() {
+    super("CoffeeScript", "text/coffeescript");
+  }
 
-	@Override
-	public boolean isCaseSensitive()
-	{
-		return true;
-	}
+  @Override
+  public boolean isCaseSensitive() {
+    return true;
+  }
 }

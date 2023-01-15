@@ -1,11 +1,8 @@
 package org.coffeebrew.lang.psi;
 
-import static org.coffeebrew.file.CoffeeScriptFileType.INSTANCE;
-
-import javax.annotation.Nonnull;
-import com.intellij.extapi.psi.PsiFileBase;
-import com.intellij.openapi.fileTypes.FileType;
-import com.intellij.psi.FileViewProvider;
+import consulo.language.file.FileViewProvider;
+import consulo.language.impl.psi.PsiFileBase;
+import org.coffeebrew.CoffeeScriptLanguage;
 
 /**
  * A CoffeeScript file
@@ -14,18 +11,7 @@ import com.intellij.psi.FileViewProvider;
  * @since 0.1.0
  */
 public class CoffeeScriptFile extends PsiFileBase {
-
   public CoffeeScriptFile(FileViewProvider viewProvider) {
-    super(viewProvider, INSTANCE.getLanguage());
+    super(viewProvider, CoffeeScriptLanguage.INSTANCE);
   }
-
-  @Nonnull
-  public FileType getFileType() {
-    return INSTANCE;
-  }
-
-  public String toString() {
-    return "CoffeeScript File: " + getName();
-  }
-
 }
