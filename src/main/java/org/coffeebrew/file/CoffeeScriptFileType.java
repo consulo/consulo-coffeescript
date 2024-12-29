@@ -4,10 +4,8 @@ import consulo.coffeescript.icon.CoffeeScriptIconGroup;
 import consulo.language.file.LanguageFileType;
 import consulo.localize.LocalizeValue;
 import consulo.ui.image.Image;
+import jakarta.annotation.Nonnull;
 import org.coffeebrew.CoffeeScriptLanguage;
-import org.jetbrains.annotations.NonNls;
-
-import javax.annotation.Nonnull;
 
 /**
  * CoffeeScript file properties
@@ -41,6 +39,6 @@ public class CoffeeScriptFileType extends LanguageFileType {
 
   @Nonnull
   public Image getIcon() {
-    return CoffeeScriptIconGroup.coffee_script();
+    return CoffeeScriptIconGroup.coffeescript();
   }
 }

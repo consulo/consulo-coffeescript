@@ -7,7 +7,7 @@ import consulo.language.PairedBraceMatcher;
 import org.coffeebrew.CoffeeScriptLanguage;
 import org.coffeebrew.lang.lexer.CoffeeScriptTokenTypes;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * Brace matcher for the CoffeeScript language

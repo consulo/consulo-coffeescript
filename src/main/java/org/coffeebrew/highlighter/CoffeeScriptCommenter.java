@@ -8,8 +8,8 @@ import consulo.language.psi.PsiComment;
 import org.coffeebrew.CoffeeScriptLanguage;
 import org.coffeebrew.lang.lexer.CoffeeScriptTokenTypes;
 
-import javax.annotation.Nonnull;
-import javax.annotation.Nullable;
+import jakarta.annotation.Nonnull;
+import jakarta.annotation.Nullable;
 
 /**
  * Commenting and uncommenting of CoffeeScript code blocks

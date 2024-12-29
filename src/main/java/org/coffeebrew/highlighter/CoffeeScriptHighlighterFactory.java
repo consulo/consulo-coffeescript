@@ -5,7 +5,7 @@ import consulo.language.Language;
 import consulo.language.editor.highlight.SingleLazyInstanceSyntaxHighlighterFactory;
 import org.coffeebrew.CoffeeScriptLanguage;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 /**
  * CoffeeScript Syntax highlighter factory

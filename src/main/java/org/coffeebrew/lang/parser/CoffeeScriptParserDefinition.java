@@ -18,7 +18,7 @@ import org.coffeebrew.lang.lexer.CoffeeScriptTokenSets;
 import org.coffeebrew.lang.psi.CoffeeScriptFile;
 import org.coffeebrew.lang.psi.impl.CoffeeScriptElementImpl;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 
 @ExtensionImpl
 public class CoffeeScriptParserDefinition implements ParserDefinition {

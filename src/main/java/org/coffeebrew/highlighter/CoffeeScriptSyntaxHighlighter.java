@@ -9,7 +9,7 @@ import consulo.language.lexer.Lexer;
 import org.coffeebrew.lang.lexer.CoffeeScriptFlexLexer;
 import org.coffeebrew.lang.lexer.CoffeeScriptTokenTypes;
 
-import javax.annotation.Nonnull;
+import jakarta.annotation.Nonnull;
 import java.util.HashMap;
 import java.util.Map;
 
