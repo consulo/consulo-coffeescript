@@ -1,12 +1,11 @@
 package org.coffeebrew.highlighter;
 
 import consulo.annotation.component.ExtensionImpl;
-import consulo.colorScheme.TextAttributesKey;
 import consulo.colorScheme.setting.AttributesDescriptor;
 import consulo.language.editor.colorScheme.setting.ColorSettingsPage;
-
+import consulo.localize.LocalizeValue;
 import jakarta.annotation.Nonnull;
-import java.util.Map;
+import org.coffeebrew.CoffeeScriptLanguage;
 
 /**
  * CoffeeScript color settings page
@@ -18,123 +17,122 @@ import java.util.Map;
 public class CoffeeScriptColorSettingsPage implements ColorSettingsPage {
 
   private static final AttributesDescriptor[] ATTRS = new AttributesDescriptor[]{
-          new AttributesDescriptor("Bad character", CoffeeScriptSyntaxHighlighter.BAD_CHARACTER),
-          new AttributesDescriptor("Dot", CoffeeScriptSyntaxHighlighter.DOT),
-          new AttributesDescriptor("Colon", CoffeeScriptSyntaxHighlighter.COLON),
-          new AttributesDescriptor("Comma", CoffeeScriptSyntaxHighlighter.COMMA),
-          new AttributesDescriptor("Semicolon", CoffeeScriptSyntaxHighlighter.SEMICOLON),
-          new AttributesDescriptor("Parenthesis", CoffeeScriptSyntaxHighlighter.PARENTHESIS),
-          new AttributesDescriptor("Brackets", CoffeeScriptSyntaxHighlighter.BRACKETS),
-          new AttributesDescriptor("Braces", CoffeeScriptSyntaxHighlighter.BRACES),
-          new AttributesDescriptor("Line comment", CoffeeScriptSyntaxHighlighter.LINE_COMMENT),
-          new AttributesDescriptor("Block comment", CoffeeScriptSyntaxHighlighter.BLOCK_COMMENT),
-          new AttributesDescriptor("Identifier", CoffeeScriptSyntaxHighlighter.IDENTIFIER),
-          new AttributesDescriptor("Class", CoffeeScriptSyntaxHighlighter.CLASS_NAME),
-          new AttributesDescriptor("Function name", CoffeeScriptSyntaxHighlighter.FUNCTION_NAME),
-          new AttributesDescriptor("Function", CoffeeScriptSyntaxHighlighter.FUNCTION),
-          new AttributesDescriptor("Function binding", CoffeeScriptSyntaxHighlighter.FUNCTION_BINDING),
-          new AttributesDescriptor("Object key", CoffeeScriptSyntaxHighlighter.OBJECT_KEY),
-          new AttributesDescriptor("Constant", CoffeeScriptSyntaxHighlighter.CONSTANT),
-          new AttributesDescriptor("Number", CoffeeScriptSyntaxHighlighter.NUMBER),
-          new AttributesDescriptor("Boolean", CoffeeScriptSyntaxHighlighter.BOOLEAN),
-          new AttributesDescriptor("String literal", CoffeeScriptSyntaxHighlighter.STRING_LITERAL),
-          new AttributesDescriptor("String", CoffeeScriptSyntaxHighlighter.STRING),
-          new AttributesDescriptor("Expression substitution mark", CoffeeScriptSyntaxHighlighter.EXPRESSIONS_SUBSTITUTION_MARK),
-          new AttributesDescriptor("Escape sequence", CoffeeScriptSyntaxHighlighter.ESCAPE_SEQUENCE),
-          new AttributesDescriptor("This references", CoffeeScriptSyntaxHighlighter.THIS),
-          new AttributesDescriptor("Prototype", CoffeeScriptSyntaxHighlighter.PROTOTYPE),
-          new AttributesDescriptor("Operations", CoffeeScriptSyntaxHighlighter.OPERATIONS),
-          new AttributesDescriptor("Existential operator", CoffeeScriptSyntaxHighlighter.EXISTENTIAL),
-          new AttributesDescriptor("Keyword", CoffeeScriptSyntaxHighlighter.KEYWORD),
-          new AttributesDescriptor("Range", CoffeeScriptSyntaxHighlighter.RANGE),
-          new AttributesDescriptor("Splat", CoffeeScriptSyntaxHighlighter.SPLAT),
-          new AttributesDescriptor("Regular expression id", CoffeeScriptSyntaxHighlighter.REGULAR_EXPRESSION_ID),
-          new AttributesDescriptor("Regular expression content", CoffeeScriptSyntaxHighlighter.REGULAR_EXPRESSION_CONTENT),
-          new AttributesDescriptor("Regular expression flag", CoffeeScriptSyntaxHighlighter.REGULAR_EXPRESSION_FLAG),
-          new AttributesDescriptor("Heredoc id", CoffeeScriptSyntaxHighlighter.HEREDOC_ID),
-          new AttributesDescriptor("Heredoc content", CoffeeScriptSyntaxHighlighter.HEREDOC_CONTENT),
-          new AttributesDescriptor("Heregex id", CoffeeScriptSyntaxHighlighter.HEREGEX_ID),
-          new AttributesDescriptor("Heregex content", CoffeeScriptSyntaxHighlighter.HEREGEX_CONTENT),
-          new AttributesDescriptor("Javascript id", CoffeeScriptSyntaxHighlighter.JAVASCRIPT_ID),
-          new AttributesDescriptor("Javascript content", CoffeeScriptSyntaxHighlighter.JAVASCRIPT_CONTENT),
+    new AttributesDescriptor("Bad character", CoffeeScriptSyntaxHighlighter.BAD_CHARACTER),
+    new AttributesDescriptor("Dot", CoffeeScriptSyntaxHighlighter.DOT),
+    new AttributesDescriptor("Colon", CoffeeScriptSyntaxHighlighter.COLON),
+    new AttributesDescriptor("Comma", CoffeeScriptSyntaxHighlighter.COMMA),
+    new AttributesDescriptor("Semicolon", CoffeeScriptSyntaxHighlighter.SEMICOLON),
+    new AttributesDescriptor("Parenthesis", CoffeeScriptSyntaxHighlighter.PARENTHESIS),
+    new AttributesDescriptor("Brackets", CoffeeScriptSyntaxHighlighter.BRACKETS),
+    new AttributesDescriptor("Braces", CoffeeScriptSyntaxHighlighter.BRACES),
+    new AttributesDescriptor("Line comment", CoffeeScriptSyntaxHighlighter.LINE_COMMENT),
+    new AttributesDescriptor("Block comment", CoffeeScriptSyntaxHighlighter.BLOCK_COMMENT),
+    new AttributesDescriptor("Identifier", CoffeeScriptSyntaxHighlighter.IDENTIFIER),
+    new AttributesDescriptor("Class", CoffeeScriptSyntaxHighlighter.CLASS_NAME),
+    new AttributesDescriptor("Function name", CoffeeScriptSyntaxHighlighter.FUNCTION_NAME),
+    new AttributesDescriptor("Function", CoffeeScriptSyntaxHighlighter.FUNCTION),
+    new AttributesDescriptor("Function binding", CoffeeScriptSyntaxHighlighter.FUNCTION_BINDING),
+    new AttributesDescriptor("Object key", CoffeeScriptSyntaxHighlighter.OBJECT_KEY),
+    new AttributesDescriptor("Constant", CoffeeScriptSyntaxHighlighter.CONSTANT),
+    new AttributesDescriptor("Number", CoffeeScriptSyntaxHighlighter.NUMBER),
+    new AttributesDescriptor("Boolean", CoffeeScriptSyntaxHighlighter.BOOLEAN),
+    new AttributesDescriptor("String literal", CoffeeScriptSyntaxHighlighter.STRING_LITERAL),
+    new AttributesDescriptor("String", CoffeeScriptSyntaxHighlighter.STRING),
+    new AttributesDescriptor("Expression substitution mark", CoffeeScriptSyntaxHighlighter.EXPRESSIONS_SUBSTITUTION_MARK),
+    new AttributesDescriptor("Escape sequence", CoffeeScriptSyntaxHighlighter.ESCAPE_SEQUENCE),
+    new AttributesDescriptor("This references", CoffeeScriptSyntaxHighlighter.THIS),
+    new AttributesDescriptor("Prototype", CoffeeScriptSyntaxHighlighter.PROTOTYPE),
+    new AttributesDescriptor("Operations", CoffeeScriptSyntaxHighlighter.OPERATIONS),
+    new AttributesDescriptor("Existential operator", CoffeeScriptSyntaxHighlighter.EXISTENTIAL),
+    new AttributesDescriptor("Keyword", CoffeeScriptSyntaxHighlighter.KEYWORD),
+    new AttributesDescriptor("Range", CoffeeScriptSyntaxHighlighter.RANGE),
+    new AttributesDescriptor("Splat", CoffeeScriptSyntaxHighlighter.SPLAT),
+    new AttributesDescriptor("Regular expression id", CoffeeScriptSyntaxHighlighter.REGULAR_EXPRESSION_ID),
+    new AttributesDescriptor("Regular expression content", CoffeeScriptSyntaxHighlighter.REGULAR_EXPRESSION_CONTENT),
+    new AttributesDescriptor("Regular expression flag", CoffeeScriptSyntaxHighlighter.REGULAR_EXPRESSION_FLAG),
+    new AttributesDescriptor("Heredoc id", CoffeeScriptSyntaxHighlighter.HEREDOC_ID),
+    new AttributesDescriptor("Heredoc content", CoffeeScriptSyntaxHighlighter.HEREDOC_CONTENT),
+    new AttributesDescriptor("Heregex id", CoffeeScriptSyntaxHighlighter.HEREGEX_ID),
+    new AttributesDescriptor("Heregex content", CoffeeScriptSyntaxHighlighter.HEREGEX_CONTENT),
+    new AttributesDescriptor("Javascript id", CoffeeScriptSyntaxHighlighter.JAVASCRIPT_ID),
+    new AttributesDescriptor("Javascript content", CoffeeScriptSyntaxHighlighter.JAVASCRIPT_CONTENT),
   };
 
   @Nonnull
-  public String getDisplayName() {
-    return "CoffeeScript";
+  @Override
+  public LocalizeValue getDisplayName() {
+    return CoffeeScriptLanguage.INSTANCE.getDisplayName();
   }
 
+  @Override
   @Nonnull
   public AttributesDescriptor[] getAttributeDescriptors() {
     return ATTRS;
   }
 
+  @Override
   @Nonnull
   public CoffeeScriptSyntaxHighlighter getHighlighter() {
     return new CoffeeScriptSyntaxHighlighter();
   }
 
+  @Override
   @Nonnull
   public String getDemoText() {
     return "###\n" +
-            "Some tests\n" +
-            "###\n" +
-            "class Animal\n" +
-            "  constructor: (@name) -> \n" +
-            "  move: (meters) -> alert @name + \" moved \" + meters + \"m.\"\n" +
-            "\n" +
-            "class Snake extends Animal\n" +
-            "  move: -> \n" +
-            "    alert \'Slithering...\'\n" +
-            "    super 5\n" +
-            "\n" +
-            "number   = 42; opposite = true\n" +
-            "\n" +
-            "/^a\\/\\\\[a-Z/\\n]\\u00A3b$/.test 'a//b'\n" +
-            "\n" +
-            "square = (x) -> x * x\n" +
-            "\n" +
-            "list = [1...5]\n" +
-            "\n" +
-            "math =\n" +
-            "  root:   Math.sqrt\n" +
-            "  cube:   (x) => x * square x\n" +
-            "\n" +
-            "race = (winner, runners...) ->\n" +
-            "  print winner, runners\n" +
-            "\n" +
-            "alert \"I knew it!\" if elvis?\n" +
-            "\n" +
-            "cubes = math.cube num for num in list\n" +
-            "\n" +
-            "text = \"\"\"\n" +
-            " Result \n" +
-            "    is #{ @number }\"\"\"\n" +
-            "\n" +
-            "html = ''' " +
-            "  <body></body>" +
-            "'''\n" +
-            "let me = 0 # let is reserved\n" +
-            "\n" +
-            "String::dasherize = ->\n" +
-            "  this.replace /_/g, \"-\"" +
-            "\n" +
-            "SINGERS = {Jagger: \"Rock\", Elvis: \"Roll\"}\n" +
-            "\n" +
-            "t = ///\n" +
-            "#{ something }[a-z]\n" +
-            "///igm\n" +
-            "\n" +
-            "$('.shopping_cart').bind 'click', (event) =>\n" +
-            "    @customer.purchase @cart\n" +
-            "\n" +
-            "hi = `function() {\n" +
-            "  return [document.title, \"Hello JavaScript\"].join(\": \");\n" +
-            "}`";
+      "Some tests\n" +
+      "###\n" +
+      "class Animal\n" +
+      "  constructor: (@name) -> \n" +
+      "  move: (meters) -> alert @name + \" moved \" + meters + \"m.\"\n" +
+      "\n" +
+      "class Snake extends Animal\n" +
+      "  move: -> \n" +
+      "    alert \'Slithering...\'\n" +
+      "    super 5\n" +
+      "\n" +
+      "number   = 42; opposite = true\n" +
+      "\n" +
+      "/^a\\/\\\\[a-Z/\\n]\\u00A3b$/.test 'a//b'\n" +
+      "\n" +
+      "square = (x) -> x * x\n" +
+      "\n" +
+      "list = [1...5]\n" +
+      "\n" +
+      "math =\n" +
+      "  root:   Math.sqrt\n" +
+      "  cube:   (x) => x * square x\n" +
+      "\n" +
+      "race = (winner, runners...) ->\n" +
+      "  print winner, runners\n" +
+      "\n" +
+      "alert \"I knew it!\" if elvis?\n" +
+      "\n" +
+      "cubes = math.cube num for num in list\n" +
+      "\n" +
+      "text = \"\"\"\n" +
+      " Result \n" +
+      "    is #{ @number }\"\"\"\n" +
+      "\n" +
+      "html = ''' " +
+      "  <body></body>" +
+      "'''\n" +
+      "let me = 0 # let is reserved\n" +
+      "\n" +
+      "String::dasherize = ->\n" +
+      "  this.replace /_/g, \"-\"" +
+      "\n" +
+      "SINGERS = {Jagger: \"Rock\", Elvis: \"Roll\"}\n" +
+      "\n" +
+      "t = ///\n" +
+      "#{ something }[a-z]\n" +
+      "///igm\n" +
+      "\n" +
+      "$('.shopping_cart').bind 'click', (event) =>\n" +
+      "    @customer.purchase @cart\n" +
+      "\n" +
+      "hi = `function() {\n" +
+      "  return [document.title, \"Hello JavaScript\"].join(\": \");\n" +
+      "}`";
   }
-
-  public Map<String, TextAttributesKey> getAdditionalHighlightingTagToDescriptorMap() {
-    return null;
-  }
-
 }
